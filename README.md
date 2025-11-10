@@ -4,7 +4,7 @@ Helpful scripts for working at NCI
 To use these scripts on NCI infrastructure do the following:
 
 ```
-module use /g/data/hh5/public/modules
+module use /g/data/xp65/public/modules
 module load nci-scripts
 ```
 
@@ -22,7 +22,7 @@ $ uqstat
 qcost
 ------
 
-Calculates what it would cost, in SU, for a job submitted to the PBS system with the same configuration. 
+Calculates what it would cost, in SU, for a job submitted to the PBS system with the same configuration.
 The information is all contained in the [PBS queue information is provided by NCI](https://opus.nci.org.au/display/Help/Queue+Limits)
 but it can be tedious to determine which configuration of queue and memory request should be used
 to minimise job cost. `qcost` was created to make this process easier.
@@ -32,8 +32,8 @@ Usage:
 ./qcost -h
 usage: qcost [-h] -q QUEUE -n NCPUS -m MEM [-t TIME]
 
-Return what it would cost (in SUs) for a PBS job submitted on gadi with the same               
-configuration. No checking is done to ensure requests are within queue limits.                 
+Return what it would cost (in SUs) for a PBS job submitted on gadi with the same
+configuration. No checking is done to ensure requests are within queue limits.
 
 
 optional arguments:
@@ -59,7 +59,7 @@ $ qcost -q normal -n 4 -m 60GB -t 3:00:00
 gadi_jupyter
 ------------
 
-Run a Jupyter notebook on Gadi, displaying it in a local web browser. 
+Run a Jupyter notebook on Gadi, displaying it in a local web browser.
 
 **THIS MUST BE RUN FROM YOUR OWN COMPUTER**
 
@@ -67,7 +67,7 @@ So the first step is to clone this repository to your local workstation. It
 works on mac/linux/windows (for windows using e.g. [git bash](https://gitforwindows.org/)
 or [Windows Ssubsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install)).
 
-By default the script will spawn a job with a single CPU, 4GB of memory 
+By default the script will spawn a job with a single CPU, 4GB of memory
 and a walltime of 1 hour.
 
 Command line options can be used to alter the resources requested, the
@@ -106,13 +106,13 @@ Queue Options:
 
 ```
 
-You will need to have ssh keys setup for logging into gadi. There is a 
+You will need to have ssh keys setup for logging into gadi. There is a
 [guide on how to do this on the CMS Wiki](http://climate-cms.wikis.unsw.edu.au/CLEx_induction#Step_2:_Set_up_your_Connection).
 
 vdi_jupyter.py
 --------------
 
-Run a Jupyter notebook on 
+Run a Jupyter notebook on
 [NCI Virtual Desktop Infrastructure (VDI)](https://opus.nci.org.au/display/Help/VDI+User+Guide), displaying it in a local web browser (run from your own computer).
 
 To run:
@@ -120,11 +120,11 @@ To run:
 python nci_scripts/vdi_jupyter.py
 ```
 
-This script requires the `pexpect` package. To make a `conda` environment with the required 
+This script requires the `pexpect` package. To make a `conda` environment with the required
 packages:
 ```
 conda env create -f nci_scripts/vdi_environment.yml
-``` 
+```
 then activate the environment:
 ```
 conda activate jupyter_vdi
