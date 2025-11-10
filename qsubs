@@ -2,7 +2,7 @@
 
 set -eu
 
-storage="gdata/hh5"
+storage="gdata/xp65"
 for p in $(id -nG); do
     if [ $p = "access.dev" ]; then continue; fi
     if [ $p = "access.admin" ]; then continue; fi
