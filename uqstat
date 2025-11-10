@@ -1,4 +1,4 @@
-#!/g/data3/hh5/public/apps/nci_scripts/python-analysis3
+#!/g/data/xp65/public/apps/nci_scripts/python-analysis3
 
 import pandas
 import subprocess
@@ -80,7 +80,7 @@ def nqstat_df(project):
     token = pymunge.encode().decode('utf-8')
     headers = { 'Authorization': "MUNGE %s" % (token) }
     params = {'project': project}
-    
+
     response = requests.get(url, params=params, headers=headers, timeout=120.0)
     response.raise_for_status()
 

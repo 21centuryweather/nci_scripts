@@ -208,7 +208,7 @@ def main(args):
             logging.info('Unable to launch new VDI session:\n'+r.before.decode())
 
         params.update(m.groupdict())
-        time.sleep(2)   # TODO: instead of waiting, should check for confirmation 
+        time.sleep(2)   # TODO: instead of waiting, should check for confirmation
                         # use has-started
 
     logging.info("Determine jobid for VDI session...{jobid}".format(**params))
@@ -222,7 +222,7 @@ def main(args):
     logging.info("Running Jupyter on VDI...")
 
     setupconda = params.get('setupconda',
-              """module use /g/data3/hh5/public/modules
+              """module use /g/data/xp65/public/modules
                  && module load conda/analysis3-unstable
               """.replace('\n', ' '))
 
@@ -257,7 +257,7 @@ def main(args):
     # optional: terminate to close the vdi session?
 
 def main_argv():
-    
+
     args = parse_args(sys.argv[1:])
 
     main(args)
